@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/giris_nav"
+    app:startDestination="@id/getPhoneNumberFragment">
+
+    <fragment
+        android:id="@+id/getPhoneNumberFragment"
+        android:name="com.example.bitirmeprojesi.Fragments.GetPhoneNumberFragment"
+        android:label="fragment_get_phone_number"
+        tools:layout="@layout/fragment_get_phone_number" >
+        <action
+            android:id="@+id/action_getPhoneNumberFragment_to_verifyNumberFragment"
+            app:destination="@id/verifyNumberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyNumberFragment"
+        android:name="com.example.bitirmeprojesi.Fragments.VerifyNumberFragment"
+        android:label="fragment_verify_number"
+        tools:layout="@layout/fragment_verify_number" >
+        <argument
+            android:name="phoneCode"
+            app:argType="integer" />
+    </fragment>
+</navigation>

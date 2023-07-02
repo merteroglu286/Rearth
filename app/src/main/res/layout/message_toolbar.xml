@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="tr.main.rearth.MessagingActivity" />
+
+        <variable
+            name="hisImage"
+            type="String" />
+
+        <variable
+            name="online"
+            type="String" />
+
+        <variable
+            name="userModel"
+            type="tr.main.rearth.UserModel" />
+
+
+    </data>
+
+    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/msgToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/my_white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+</layout>

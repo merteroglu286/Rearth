@@ -1,0 +1,76 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="requestModel"
+            type="tr.main.rearth.FollowRequestModel" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="8dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgContactItem"
+                imageUrl="@{requestModel.senderImage}"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@drawable/user_placeholder" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{requestModel.senderName , default=Nothing}"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:maxWidth="200dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="12dp"
+                />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/btnToAccept"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_baseline_check_24"
+                android:background="@drawable/outlined_btn_gray"
+                app:tint="@color/main_gray"
+                android:layout_gravity="center_vertical"
+                />
+            <ImageView
+                android:id="@+id/btnToReject"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_baseline_close_24"
+                android:background="@drawable/outlined_btn_gray"
+                android:layout_marginStart="12dp"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:background="@color/lightGray"/>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

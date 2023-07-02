@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "267438268611",
+    "project_id": "rearth-bba5d",
+    "storage_bucket": "rearth-bba5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267438268611:android:75e586cdfa80a37aca0276",
+        "android_client_info": {
+          "package_name": "tr.main.rearth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267438268611-0mrgss2g2a6d1m2j52a05tligia8sm8o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tr.main.rearth",
+            "certificate_hash": "1d17a7684bbc2ad4f5ec0ddd4b98add67253acf8"
+          }
+        },
+        {
+          "client_id": "267438268611-efd30uetvdtaqvr9r8sa37o9inatbmgf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc6nPnekq2CgA5SFbnMcPjvQGrIRkEqBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267438268611-efd30uetvdtaqvr9r8sa37o9inatbmgf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

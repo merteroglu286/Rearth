@@ -1,0 +1,222 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="noticeModel"
+            type="tr.main.rearth.NoticeModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <!-- Your scrollable content here -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/contextNoticeItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/border_notice_detail_green"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="24dp"
+                    android:paddingBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="12dp"
+                        android:text="00:00"
+                        android:textSize="16dp" />
+                    <LinearLayout
+                        android:id="@+id/linearContext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="4dp"
+                        android:layout_below="@id/tvTime">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/imgContactItem"
+                            imageUrl="@{noticeModel.userImage}"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:src="@drawable/user_placeholder" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingStart="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvName"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="start"
+                                    android:text="@{noticeModel.username , default=Nothing}"
+                                    android:textColor="@color/black"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:id="@+id/tvMsg"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:maxHeight="120dp"
+                                android:text="@{noticeModel.noticeMessage, default = Nothing}"
+                                android:textSize="16dp" />
+
+                            <ImageView
+                                android:id="@+id/noticeImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:layout_marginTop="8dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/user_placeholder"
+                                android:visibility="gone" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/linearContext"
+                        android:layout_marginTop="16dp"
+
+                        >
+                        <ImageView
+                            android:id="@+id/btnUp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/up_arrow_outlined"
+                            app:tint="@color/main_green"
+                            android:layout_gravity="center_vertical"
+                            android:foreground="?android:attr/selectableItemBackground"/>
+
+                        <TextView
+                            android:id="@+id/countRating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@{noticeModel.noticeRating , default=0}"
+                            android:textSize="14dp"
+                            android:visibility="visible"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="2dp" />
+                        <ImageView
+                            android:id="@+id/btnDown"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/down_arrow_outlined"
+                            app:tint="@color/main_green"
+                            android:layout_marginEnd="4dp"
+                            android:layout_gravity="center_vertical"
+                            android:foreground="?android:attr/selectableItemBackground"/>
+                        <ImageView
+                            android:id="@+id/btnComment"
+                            android:layout_width="21dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/chat_icon"
+                            app:tint="@color/main_green"
+                            android:layout_marginEnd="4dp"
+                            android:foreground="?android:attr/selectableItemBackground"/>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/contextNoticeItem"
+                    android:nestedScrollingEnabled="false"/>
+
+
+
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/commentLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:background="#DBE5E6"
+            android:paddingVertical="12dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/messageLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/message_edittext_send_background"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="12dp"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/commentEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edittext"
+                    android:maxLines="3"
+                    android:gravity="top|left"
+                    android:hint="Bir yorum yazın"
+                    android:inputType="textMultiLine"
+                    android:paddingVertical="12dp"
+                    android:paddingStart="16dp"
+                    android:scrollbars="vertical" />
+
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/btnSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background_1"
+                android:padding="14dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="3dp"
+                android:layout_gravity="bottom"
+                android:src="@drawable/ic_baseline_send_24"
+                app:tint="@color/white" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</layout>

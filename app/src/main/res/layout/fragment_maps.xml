@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Dashboard.MapsFragment"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/btn_in_map_bg"
+        android:padding="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="42dp"
+        >
+        <TextView
+            android:id="@+id/noticeCredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/img_notice_credit"
+            android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/mapSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="1dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/card_background_1"
+        app:iconifiedByDefault="false"
+        app:queryHint="Konum Ara"
+        android:visibility="gone"
+        app:queryBackground="@drawable/transparent_background"
+        />
+
+    <ImageView
+        android:id="@+id/btnToAllNoticesFragment"
+        android:layout_width="48dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/search_location"
+        android:background="@drawable/btn_in_map_bg"
+        android:foreground="?selectableItemBackground"
+        android:paddingVertical="4dp"
+        android:paddingHorizontal="4dp"
+        android:layout_above="@id/btnToNoticesFragment"/>
+
+    <ImageView
+        android:id="@+id/btnToNoticesFragment"
+        android:layout_width="48dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/nearby_location"
+        android:background="@drawable/btn_in_map_bg"
+        android:foreground="?selectableItemBackground"
+        android:paddingVertical="4dp"
+        android:paddingHorizontal="4dp"
+        android:layout_above="@id/fabAddLocation"/>
+
+    <ImageView
+        android:id="@+id/fabAddLocation"
+        android:layout_width="48dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/share_location"
+        android:background="@drawable/btn_in_map_bg"
+        android:foreground="?selectableItemBackground"
+        android:paddingVertical="4dp"
+        android:paddingHorizontal="4dp"/>
+
+    <ImageView
+        android:id="@+id/fabAddLocation_pale"
+        android:layout_width="48dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/share_location_pale"
+        android:background="@drawable/btn_in_map_bg"
+        android:foreground="?selectableItemBackground"
+        android:paddingVertical="4dp"
+        android:paddingHorizontal="4dp"
+        android:visibility="invisible"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabShowSearcbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="center"
+        android:src="@drawable/baseline_location_searching_24"
+        app:backgroundTint="#87C9AC"
+        android:layout_above="@id/fabShowLocation"
+        app:fabSize="mini" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabShowLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:scaleType="center"
+        android:src="@drawable/baseline_my_location_24"
+        app:backgroundTint="#87C9AC"
+        app:fabSize="mini" />
+
+
+    <RelativeLayout
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#73A7A7A7"
+        android:visibility="invisible"
+        android:clickable="true"
+        android:focusable="true">
+
+        <View
+            android:id="@+id/overlayView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"/>
+
+        <ProgressBar
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="#87C9AC" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.UserInfoActivity"
+    >
+
+    <RelativeLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="24dp"
+        android:background="@drawable/gradient_background">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="85dp"/>
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgProfile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Kullanıcı Adı"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/userName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible">
+            <TextView
+                android:id="@+id/btnMessage"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="Mesaj"
+                android:paddingVertical="6dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:background="@drawable/outlined_button_background"
+                />
+            <TextView
+                android:id="@+id/btnFollow"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="Takiptesin ✓"
+                android:textAlignment="center"
+                android:paddingVertical="6dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:background="@drawable/outlined_button_background"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btnFollowed"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Takip isteği gönder"
+            android:textAlignment="center"
+            android:paddingVertical="6dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/userName"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginTop="10dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:background="@drawable/outlined_button_background"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearButtons"
+            android:background="#1A000000"
+            android:layout_marginTop="24dp"
+            >
+
+            <LinearLayout
+                android:id="@+id/linearSayilar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="12dp">
+                <TextView
+                    android:id="@+id/countOfFollowers"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="100"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/countOfFollowing"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="150"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    tools:ignore="RtlCompat" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="12dp"
+                android:layout_below="@id/linearSayilar">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Takipçi"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="Takip"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    tools:ignore="RtlCompat" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</FrameLayout>

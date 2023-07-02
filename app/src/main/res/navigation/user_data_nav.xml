@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_data_nav"
+    app:startDestination="@id/kullaniciBilgilendirmeFragment2">
+
+    <fragment
+        android:id="@+id/kullaniciAdiFragment2"
+        android:name="tr.main.rearth.Fragments.GetUserData.KullaniciAdiFragment"
+        android:label="fragment_kullanici_adi"
+        tools:layout="@layout/fragment_kullanici_adi" >
+        <action
+            android:id="@+id/action_kullaniciAdiFragment2_to_kullaniciDogumTarihiFragment2"
+            app:destination="@id/kullaniciDogumTarihiFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/kullaniciCinsiyetFragment2"
+        android:name="tr.main.rearth.Fragments.GetUserData.KullaniciCinsiyetFragment"
+        android:label="fragment_kullanici_cinsiyet"
+        tools:layout="@layout/fragment_kullanici_cinsiyet" >
+        <action
+            android:id="@+id/action_kullaniciCinsiyetFragment2_to_kullaniciFotografFragment2"
+            app:destination="@id/kullaniciFotografFragment2" />
+        <argument
+            android:name="kullaniciAdi"
+            app:argType="string" />
+        <argument
+            android:name="dogumTarihi"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/kullaniciBilgilendirmeFragment2"
+        android:name="tr.main.rearth.Fragments.GetUserData.KullaniciBilgilendirmeFragment"
+        android:label="fragment_kullanici_bilgilendirme"
+        tools:layout="@layout/fragment_kullanici_bilgilendirme" >
+        <action
+            android:id="@+id/action_kullaniciBilgilendirmeFragment2_to_kullaniciAdiFragment2"
+            app:destination="@id/kullaniciAdiFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/kullaniciDogumTarihiFragment2"
+        android:name="tr.main.rearth.Fragments.GetUserData.KullaniciDogumTarihiFragment"
+        android:label="fragment_kullanici_dogum_tarihi"
+        tools:layout="@layout/fragment_kullanici_dogum_tarihi" >
+        <action
+            android:id="@+id/action_kullaniciDogumTarihiFragment2_to_kullaniciCinsiyetFragment2"
+            app:destination="@id/kullaniciCinsiyetFragment2" />
+        <argument android:name="kullaniciAdi"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/kullaniciFotografFragment2"
+        android:name="tr.main.rearth.Fragments.GetUserData.KullaniciFotografFragment"
+        android:label="fragment_kullanici_fotograf"
+        tools:layout="@layout/fragment_kullanici_fotograf">
+        <argument
+            android:name="kullaniciAdi"
+            app:argType="string" />
+        <argument
+            android:name="dogumTarihi"
+            app:argType="string" />
+        <argument
+            android:name="cinsiyet"
+            app:argType="string" />
+    </fragment>
+</navigation>

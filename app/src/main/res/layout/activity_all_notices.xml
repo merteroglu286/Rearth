@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activities.NoticeDetailActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/tabLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bildiri Ara"
+                    android:textStyle="bold"
+                    android:layout_marginStart="2dp"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/noticesSearchView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="1dp"
+                        android:background="@drawable/searchview_background"
+                        app:iconifiedByDefault="false"
+                        app:queryHint="Konuma göre ara"
+                        app:queryBackground="@drawable/transparent_background"
+                        android:layout_marginBottom="12dp"
+                        />
+                    <ImageView
+                        android:id="@+id/imgFilter"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/baseline_filter_list_24"
+                        android:layout_below="@id/tabLinear"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+
+<!--
+                <ListView
+                    android:id="@+id/list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+-->
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/contextRadio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tabLinear"
+                android:paddingStart="24dp"
+                android:paddingBottom="8dp"
+                android:visibility="gone">
+
+                <RadioGroup
+                    android:id="@+id/radioGroupFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/btnGreenFilterAllNotices"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:button="@color/transparent"
+                        android:background="@drawable/radio_green"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btnYellowFilterAllNotices"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:button="@color/transparent"
+                        android:background="@drawable/radio_yellow"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btnRedFilterAllNotices"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:button="@color/transparent"
+                        android:background="@drawable/radio_red"
+                        />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/btnClearRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Filtreyi Temizle"
+                    android:layout_marginStart="110dp"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/allNoticesList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/contextRadio"/>
+
+            <TextView
+                android:id="@+id/txtError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:text="Hata oluştu, tekrar deneyiniz"/>
+
+            <ProgressBar
+                android:id="@+id/loadingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

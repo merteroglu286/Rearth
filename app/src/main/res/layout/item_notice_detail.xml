@@ -1,0 +1,104 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="noticeModel"
+            type="tr.main.rearth.NoticeModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/contextNoticeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="24dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="42dp">
+
+            <LinearLayout
+                android:id="@+id/linearContext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="4dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgContactItem"
+                    imageUrl="@{noticeModel.userImage}"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/user_placeholder" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@{noticeModel.username , default=Nothing}"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:gravity="start"/>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tvMsg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxHeight="120dp"
+                        android:text="@{noticeModel.noticeMessage, default = Nothing}"
+                        android:textSize="16dp"
+                        android:layout_marginTop="4dp"/>
+
+                    <ImageView
+                        android:id="@+id/noticeImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone"/>
+
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00"
+                        android:textSize="16dp"
+                        android:layout_gravity="end"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"
+            android:layout_below="@id/contextNoticeItem"
+            />
+    </RelativeLayout>
+
+
+</layout>

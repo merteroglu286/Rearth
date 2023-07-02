@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/dialog_context"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/border_dialog_green"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/messageEdittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:lines="6"
+        android:maxLines="8"
+        android:gravity="top|left"
+        android:minLines="4"
+        android:hint="Bir mesaj yazınız"
+        android:padding="8dp"
+        android:scrollbars="none"
+        android:background="@drawable/bildiri_edittext_bg"/>
+
+    <TextView
+        android:id="@+id/alertTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lütfen bir mesaj giriniz."
+        android:layout_below="@id/messageEdittext"
+        android:layout_marginTop="4dp"
+        android:visibility="gone"
+        android:textColor="@color/main_red"/>
+
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bildiri derecesini seçiniz"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/alertTxt"
+        android:textSize="18dp"
+        android:layout_marginTop="12dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt"
+        android:layout_marginTop="12dp"
+        android:checkedButton="@id/btnGreen"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/btnGreen"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:button="@color/transparent"
+            android:background="@drawable/radio_green"
+            />
+
+        <RadioButton
+            android:id="@+id/btnYellow"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="8dp"
+            android:button="@color/transparent"
+            android:background="@drawable/radio_yellow"
+            />
+
+        <RadioButton
+            android:id="@+id/btnRed"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="8dp"
+            android:button="@color/transparent"
+            android:background="@drawable/radio_red"
+            />
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imgPickImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/baseline_photo_camera_24"
+        android:layout_below="@id/radioGroup"
+        android:layout_marginTop="12dp"
+        app:tint="@color/main_blue"
+        android:layout_marginHorizontal="12dp"/>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radioGroup"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:id="@+id/noticeImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="fitCenter"
+            />
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_anchor="@id/noticeImage"
+            app:layout_anchorGravity="end"
+            app:tint="@color/main_gray"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+    <TextView
+        android:id="@+id/bildiriOlusturBtn"
+        android:layout_width="100dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btn_in_dialog_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp"
+        android:text="Paylaş"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:layout_below="@id/radioGroup"
+        android:layout_alignParentRight="true"/>
+
+
+
+</RelativeLayout>
